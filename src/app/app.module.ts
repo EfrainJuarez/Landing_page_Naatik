@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { Compo1Component } from './component/compo1/compo1.component';
 import { StartComponent } from './component/start/start.component';
 import { VaccinesComponent } from './component/vaccines/vaccines.component';
+import { InfoComponent } from './component/info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Compo1Component,
     StartComponent,
-    VaccinesComponent
+    VaccinesComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule
