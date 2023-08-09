@@ -1,0 +1,89 @@
+$practice-border:2px solid red;
+$media-bg-color:#3365db;
+$h1-bg-color: #1f3e72;
+$h2-bg-color:#9ba4b5;
+
+@mixin font-style($font-size, $color, $font-weight){
+    Font-family: 'Public Sans', sans-serif;
+    font-size: $font-size;
+    color: $color;
+    font-weight: $font-weight;
+}
+
+@mixin center-elements($justify-content, $align-items){
+    justify-content: $justify-content;
+    align-items: $align-items;
+    display: flex;
+    
+}
+
+@mixin icon-size{
+    width: 28px;
+    height: 28px;
+}
+
+.body{
+    height: 90vh;
+    display: flex;
+    .main-info{
+        width: 50vw;
+        flex-direction: column;
+        @include center-elements(center, center);
+        .text-container{
+            width: 85%;
+        }
+        h1{
+
+            @include font-style(3rem, $h1-bg-color, 800);
+        }
+        h2{
+            @include font-style(1.3rem,$h2-bg-color , bold);
+            width:80%;
+            margin-top: 3vh;
+        }
+    }
+    .media-content{
+        background-color: $media-bg-color;
+        width: 50vw;
+        @include center-elements(center, flex-end);
+        img{
+            width: 85%;
+            height: 85%;
+            object-fit:    contain;
+            background-color: $media-bg-color;
+        }
+    }
+
+    .icon-container {
+        @include font-style(1rem, $h1-bg-color, bold);
+        margin-top: 5vh;
+        @include center-elements(space-around, center);
+        width: 85%;
+        height: 20vh;
+        flex-direction: column;
+img{
+    @include icon-size();
+    margin-right: 1vw;
+}
+
+.top{
+    width: 70%;
+    @include center-elements(space-between, center);
+    *{
+        @include center-elements(center, center);
+    }
+}
+
+.buttom{
+    width: 70%;
+    @include center-elements(center, center);
+    #icon3{
+        @include center-elements(center, center);
+        width: 40%;
+    }
+}
+
+        }
+
+}
+
