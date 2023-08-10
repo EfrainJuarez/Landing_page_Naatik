@@ -1,0 +1,76 @@
+
+$border-style:1px solid red;
+$bg-color:#2b6edd;
+$h-bg-color:#1f3e72;
+$p-bg-color:#919cae;
+
+@mixin center-elements($justify-content, $align-items){
+    justify-content: $justify-content;
+    align-items: $align-items;
+    display: flex;
+}
+@mixin font-style($font-size, $color, $font-weight){
+    Font-family: 'Public Sans', sans-serif;
+    font-size: $font-size;
+    color: $color;
+    font-weight: $font-weight;
+}
+@mixin icon-size{
+    width: 28px;
+    height: 28px;
+}
+
+.body{
+    height: 90vh;
+    display: flex;
+    .media-content{
+        width: 45%;
+        position: relative;
+        @include center-elements(center, flex-end);
+        .bg-color{
+            background: $bg-color;
+            width: 100%;
+            height: 60%;
+
+            position: relative;
+        }
+        img{
+            width: 60%;
+            z-index: 100;
+            position: absolute;
+        }
+    }
+    .info-content{
+        @include center-elements(space-between, center);
+        width: 55%;
+        flex-direction: column;
+        h2{
+            @include font-style(2.4rem,$h-bg-color, 800);
+            width:90%;
+        }
+        p{
+            @include font-style(1.2rem,$p-bg-color , 800);
+            width: 90%;
+        }
+
+        ul{
+            height: 70%;
+            @include center-elements(space-evenly, flex-start);
+            flex-direction:column;
+            li{
+                @include font-style(1rem,$h-bg-color , 800);
+                @include center-elements(center, center);
+                transition: cubic-bezier(0.075, 0.82, 0.165, 1)1s;
+                img{
+                    margin-right: 1vw;
+                    @include icon-size();
+                }
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+}
+

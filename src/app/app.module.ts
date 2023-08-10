@@ -6,6 +6,7 @@ import { Compo1Component } from './component/compo1/compo1.component';
 import { StartComponent } from './component/start/start.component';
 import { VaccinesComponent } from './component/vaccines/vaccines.component';
 import { InfoComponent } from './component/info/info.component';
+import { RecomendationsComponent } from './component/recomendations/recomendations.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { InfoComponent } from './component/info/info.component';
     Compo1Component,
     StartComponent,
     VaccinesComponent,
-    InfoComponent
+    InfoComponent,
+    RecomendationsComponent
   ],
   imports: [
     BrowserModule
