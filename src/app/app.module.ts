@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { Compo1Component } from './component/compo1/compo1.component';
@@ -8,6 +9,8 @@ import { VaccinesComponent } from './component/vaccines/vaccines.component';
 import { InfoComponent } from './component/info/info.component';
 import { RecomendationsComponent } from './component/recomendations/recomendations.component';
 
+import { ScrollService } from './services/scroll.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,12 +18,10 @@ import { RecomendationsComponent } from './component/recomendations/recomendatio
     StartComponent,
     VaccinesComponent,
     InfoComponent,
-    RecomendationsComponent
+    RecomendationsComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [ScrollService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
